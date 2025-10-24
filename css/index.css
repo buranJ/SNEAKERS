@@ -13,7 +13,8 @@
 
 .swiper-slide img {
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .swiper-button-next,
@@ -57,6 +58,35 @@ body {
 
 body {
   font-family: "Inter", sans-serif;
+}
+
+.header__content {
+  margin-top: 43px;
+  display: flex;
+  justify-content: space-between;
+}
+.header__logo {
+  width: 247px;
+  height: 41px;
+}
+.header__nav {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 89px;
+}
+.header__icon {
+  width: 17px;
+  height: 17px;
+}
+.header__title ul, .header li, .header span {
+  list-style: none;
+  cursor: pointer;
+  color: rgb(155, 155, 155);
+  gap: 8px;
+}
+.header__botom {
+  border-bottom: 1px solid rgb(234, 234, 234);
+  margin-bottom: 45px;
 }
 
 .hero {

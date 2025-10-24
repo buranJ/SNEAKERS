@@ -1,15 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/index.css">
     <title>Document</title>
 </head>
+
 <body>
-    <section>
-        <div class="emtycard">
-            <div class="conainer">
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <a href="/">
+                        <img class="header__logotip" src=".././imgs/logo.png" alt="logo" />
+                    </a>
+                </div>
+                <div class="header__nav">
+                    <ul class="header__title">
+                        <a href="./pages/emtycard.html" class="headr__carte">
+                            <img class="header__icon" src=".././imgs/corzina.svg" alt="corzina" />
+                            <span>1205 руб.</span>
+                        </a>
+                    </ul>
+                    <ul class="header__title">
+                        <a class="headr__carte">
+                            <img class="header__icon" src=".././imgs/like.svg" alt="corzina" />
+                            <span>Закладки</span>
+                        </a>
+                    </ul>
+                    <ul class="header__title">
+                        <a class="headr__carte">
+                            <img class="header__icon" src=".././imgs/avatar.svg" alt="corzina" />
+                            <span>Профиль</span>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header__botom"></div>
+    </header>
+    <main>
+        <section class="emtycard">
+            <div class="container">
                 <div class="emtycard__content">
                     <div class="emtycard__smail">
                         <img src="../imgs/smail1.svg" alt="smail" class="emtycard__img">
@@ -17,11 +51,15 @@
                     <div class="emtycard__coment">
                         <h3 class="emtycard__title">У вас нет заказов</h3>
                         <p class="emtycard__text">Вы нищеброд? <br>Оформите хотя бы один заказ.</p>
-                        <button class="emtycard__btn"><span><img src="../imgs/strelcaemty.png" alt=""></span>Вернуться назад</button>
+                        <button class="emtycard__btn"><span><img src="../imgs/strelcaemty.png" alt=""></span>Вернуться
+                            назад</button>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+
+        </section>
+    </main>
+
 </body>
+
 </html>

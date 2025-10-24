@@ -127,4 +127,45 @@ body {
   font-weight: 700;
   font-size: 16px;
   color: #fff;
+}
+.emtycard__content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.emtycard__smail {
+  margin-top: 230px;
+  margin-bottom: 30px;
+  width: 70px;
+  height: 70px;
+}
+.emtycard__coment {
+  max-width: 290px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.emtycard__title {
+  font-weight: 600;
+  font-size: 24px;
+  color: #000000;
+}
+.emtycard__text {
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 40px;
+  margin-top: 11px;
+}
+.emtycard__btn {
+  padding: 19px 25px;
+  background-color: #9DD458;
+  border: none;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  gap: 10px;
 }/*# sourceMappingURL=index.css.map */

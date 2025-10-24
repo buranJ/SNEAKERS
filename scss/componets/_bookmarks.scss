@@ -1,4 +1,4 @@
-.emtycard {
+.bookmarks {
     &__content {
         display: flex;
         align-items: center;
@@ -30,6 +30,9 @@
         margin-bottom: 40px;
         margin-top: 11px;
     }
+    a {
+        text-decoration: none;
+    }
     &__btn {
         padding: 19px 25px;
         background-color: #9DD458;
@@ -39,7 +42,6 @@
         align-items: center;
         color: #fff;
         gap: 10px;
-        text-decoration: none;
     }
 
 

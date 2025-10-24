@@ -142,7 +142,7 @@ body {
   text-align: center;
 }
 .emtycard__smail {
-  margin-top: 230px;
+  margin-top: 100px;
   margin-bottom: 30px;
   width: 70px;
   height: 70px;
@@ -175,4 +175,83 @@ body {
   align-items: center;
   color: #fff;
   gap: 10px;
+  text-decoration: none;
+}
+
+.bookmarks__content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.bookmarks__smail {
+  margin-top: 100px;
+  margin-bottom: 30px;
+  width: 70px;
+  height: 70px;
+}
+.bookmarks__coment {
+  max-width: 290px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.bookmarks__title {
+  font-weight: 600;
+  font-size: 24px;
+  color: #000000;
+}
+.bookmarks__text {
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 40px;
+  margin-top: 11px;
+}
+.bookmarks a {
+  text-decoration: none;
+}
+.bookmarks__btn {
+  padding: 19px 25px;
+  background-color: #9DD458;
+  border: none;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  gap: 10px;
+}
+
+.purchases__text {
+  display: flex;
+  align-items: center;
+  gap: 21px;
+}
+.purchases__text a {
+  display: block;
+}
+.purchases__back {
+  padding: 12px 14px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+.purchases__content {
+  display: flex;
+  flex-direction: column;
+}
+.purchases__card {
+  width: 210px;
+  height: 260px;
+  border: 1px solid rgb(100, 100, 97);
+  border-radius: 40px;
+}
+.purchases__like {
+  position: absolute;
+}
+.purchases__crosovok {
+  position: relative;
 }/*# sourceMappingURL=index.css.map */

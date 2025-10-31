@@ -1,3 +1,7 @@
+const Likes = JSON.parse(localStorage.getItem('like')) || []
+console.log(Likes);
+
+
 const sneakers = [
     {
         "id": 1,
@@ -73,7 +77,7 @@ const sneakers = [
         "id": 11,
         "title": "Кроссовки Puma X Aka Boku Future Rider (вариант 2)",
         "price": 8999,
-        "add": true,
+        "add": false,
         "image": ""  // второй вариант. :contentReference[oaicite:9]{index=9}
     },
     {
@@ -87,16 +91,21 @@ const sneakers = [
 
 const content = document.querySelector('.sneakers__content')
 
+
+
 const CardLike = '../imgs/cardlike.svg';
 const RedLike = '../imgs/RedLike.svg'
 
-function renderCard(crasowok)  {
+function renderCard(crasowok) {
+    console.log(sneakers);
+    content.innerHTML=" "
     crasowok.forEach(item => {
         
-        content.innerHTML+= `
+
+        content.innerHTML += `
                          <div class="purchases__card">
                     <div data-id="${item.id}" class="purchases__like">
-                        <img class="" src=" ${sneakers.add ? RedLike : CardLike}" alt="like">
+                        <img class="" src="${item.add ? RedLike : CardLike}" alt="like">
                     </div>
                     <img  src="${item.image}" alt="" class="purchases__crosovok">
                     <p class="purchases__about">${item.title}</p>
@@ -112,18 +121,40 @@ function renderCard(crasowok)  {
         `
     });
 
+
     const like = document.querySelectorAll('.purchases__like')
-    like.forEach((elemt)=> {
+    like.forEach((elemt) => {
         elemt.addEventListener('click', () => {
             let id = elemt.getAttribute('data-id')
-            sneakers.filter((item) => {
-                if(item.id === id) {
-                    
+            console.log(id);
+
+            const newSneak = sneakers.filter((item) => {
+                if(item.id == id) {
+                    return {
+                        "id": item.id,
+                        "title": item.title,
+                        "price": item.price,
+                        "add": !item.add,
+                        "image": item.image  // «Pine Green/White» Suede вариант. :contentReference[oaicite:0]{index=0}
+                    }
                 }
+                const found=Likes.find((item)=>item.id==id)
             })
+            if(!found){
+                Likes.push(newSneak[0])
+  
+            }
+            else{
+                
+            }
+
+            localStorage.setItem("like",JSON.stringify(Likes))
+            console.log(newSneak);
         })
     })
-    
+
 }
 renderCard(sneakers)
+
+
 

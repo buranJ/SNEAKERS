@@ -1,0 +1,39 @@
+.sneakers {
+    &__top {
+        margin-top: 39px;
+        margin-bottom: 30px;
+     
+        display: flex;
+        justify-content: space-between;
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 32px;
+    }
+    &__border {
+        border: 1px solid #F3F3F3;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px ;
+        border-radius: 8px;
+    }
+    &__lupa {
+        width: 15px;
+        height: 15px;
+        // padding: 15px;
+    }
+    &__inp {
+        border: none;
+
+}
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    input::placeholder {
+        color: #C4C4c4;
+}
+}
+

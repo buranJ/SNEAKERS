@@ -1,4 +1,4 @@
-const Likes = JSON.parse(localStorage.getItem('like')) || []
+let Likes = JSON.parse(localStorage.getItem('like')) || []
 console.log(Likes);
 
 
@@ -97,7 +97,6 @@ const CardLike = '../imgs/cardlike.svg';
 const RedLike = '../imgs/RedLike.svg'
 
 function renderCard(crasowok) {
-    console.log(sneakers);
     content.innerHTML=" "
     crasowok.forEach(item => {
         
@@ -126,7 +125,8 @@ function renderCard(crasowok) {
     like.forEach((elemt) => {
         elemt.addEventListener('click', () => {
             let id = elemt.getAttribute('data-id')
-            console.log(id);
+            // console.log(id);
+
 
             const newSneak = sneakers.filter((item) => {
                 if(item.id == id) {
@@ -138,18 +138,28 @@ function renderCard(crasowok) {
                         "image": item.image  // «Pine Green/White» Suede вариант. :contentReference[oaicite:0]{index=0}
                     }
                 }
-                const found=Likes.find((item)=>item.id==id)
             })
+            const found=Likes.find((item)=>item.id==id)
+
+            
             if(!found){
                 Likes.push(newSneak[0])
-  
-            }
-            else{
+                console.log(Likes);
                 
             }
+            else{
+                 Likes.splice(Likes.indexOf(found),1)
+                 console.log(Likes);
+                 
+            }
+            console.log(Likes);
+            
+
+
+
 
             localStorage.setItem("like",JSON.stringify(Likes))
-            console.log(newSneak);
+            // console.log(newSneak);
         })
     })
 

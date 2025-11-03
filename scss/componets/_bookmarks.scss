@@ -1,9 +1,12 @@
 .bookmarks {
     &__content {
+        margin-top: 30px;
         display: flex;
         align-items: center;
-        flex-direction: column;
         text-align: center;
+        flex-wrap: wrap;
+        gap: 20px;
+
     }
     &__smail {
         margin-top: 100px;
@@ -44,6 +47,21 @@
         gap: 10px;
     }
 
+    &__link{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    h1{
+        color: #000000;
+    }
 
 
+
+}
+
+.cart__img{
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
 }

@@ -1,8 +1,7 @@
 let Likes = JSON.parse(localStorage.getItem('like')) || []
-console.log(Likes);
-
-
-const sneakers = [
+let sneakers = JSON.parse(localStorage.getItem('sneakers')) || []
+console.log(sneakers);
+const sneakers1 = [
     {
         "id": 1,
         "title": "Мужские Кроссовки Nike Blazer Mid Suede",
@@ -89,18 +88,21 @@ const sneakers = [
     }
 ]
 
-const content = document.querySelector('.sneakers__content')
 
+
+
+localStorage.setItem("sneakers", JSON.stringify(sneakers))
+
+
+const content = document.querySelector('.sneakers__content')
 
 
 const CardLike = '../imgs/cardlike.svg';
 const RedLike = '../imgs/RedLike.svg'
 
 function renderCard(crasowok) {
-    content.innerHTML=" "
+    content.innerHTML = " "
     crasowok.forEach(item => {
-        
-
         content.innerHTML += `
                          <div class="purchases__card">
                     <div data-id="${item.id}" class="purchases__like">
@@ -120,16 +122,27 @@ function renderCard(crasowok) {
         `
     });
 
-
-    const like = document.querySelectorAll('.purchases__like')
-    like.forEach((elemt) => {
+    const likes = document.querySelectorAll('.purchases__like')
+    likes.forEach((elemt) => {
         elemt.addEventListener('click', () => {
             let id = elemt.getAttribute('data-id')
             // console.log(id);
-
-
             const newSneak = sneakers.filter((item) => {
-                if(item.id == id) {
+                if (item.id == id) {
+                    return item
+                }
+            }).map((item) => {
+                return {
+                    "id": item.id,
+                    "title": item.title,
+                    "price": item.price,
+                    "add": true,
+                    "image": item.image  // «Pine Green/White» Suede вариант. :contentReference[oaicite:0]{index=0}
+                }
+            })
+
+            sneakers = sneakers.map((item) => {
+                if (item.id == id) {
                     return {
                         "id": item.id,
                         "title": item.title,
@@ -137,34 +150,35 @@ function renderCard(crasowok) {
                         "add": !item.add,
                         "image": item.image  // «Pine Green/White» Suede вариант. :contentReference[oaicite:0]{index=0}
                     }
+
+                }
+                else {
+                    return item
                 }
             })
-            const found=Likes.find((item)=>item.id==id)
+            const found = Likes.find((item) => item.id == id)
 
-            
-            if(!found){
+
+            if (!found) {
                 Likes.push(newSneak[0])
                 console.log(Likes);
-                
+
             }
-            else{
-                 Likes.splice(Likes.indexOf(found),1)
-                 console.log(Likes);
-                 
+            else {
+                Likes.splice(Likes.indexOf(found), 1)
+
+
             }
-            console.log(Likes);
-            
+            localStorage.setItem("like", JSON.stringify(Likes))
 
 
+            localStorage.setItem("sneakers", JSON.stringify(sneakers))
+            renderCard(sneakers)
 
-
-            localStorage.setItem("like",JSON.stringify(Likes))
-            // console.log(newSneak);
         })
     })
-
 }
-renderCard(sneakers)
 
+renderCard(sneakers)
 
 

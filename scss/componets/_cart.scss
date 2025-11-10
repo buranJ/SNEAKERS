@@ -16,6 +16,15 @@
 
     }
 
+    &__top{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__x{
+        cursor: pointer;
+    }
+
     &__title {
         font-family: 'Inter';
         font-weight: 700;

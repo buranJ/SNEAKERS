@@ -10,7 +10,7 @@ const redLikeIcon = '../imgs/RedLike.svg';
 
 function showAllCards() {
     content.innerHTML = "";
-    
+
     sneakers.forEach((item) => {
         content.innerHTML += `
             <div class="purchases__card">
@@ -30,13 +30,13 @@ function showAllCards() {
             </div>
         `;
     });
-    
+
     addLikeListeners();
 }
 
 function addLikeListeners() {
     const likeButtons = document.querySelectorAll('.purchases__like');
-    
+
     likeButtons.forEach((button) => {
         button.addEventListener('click', likeButtonClicked);
     });
@@ -49,11 +49,11 @@ function addLikeListeners() {
 function likeButtonClicked(event) {
     const button = event.currentTarget;
     const id = button.getAttribute('data-id');
-    
+
     sneakers = sneakers.map((item) => {
         if (item.id == id) {
             item.add = !item.add;
-            
+
             if (item.add) {
                 addToLikes(item);
             } else {
@@ -62,16 +62,16 @@ function likeButtonClicked(event) {
         }
         return item;
     });
-    
+
     localStorage.setItem('sneakers', JSON.stringify(sneakers));
     localStorage.setItem('like', JSON.stringify(likes));
-    
+
     showAllCards();
 }
 
 function addToLikes(sneaker) {
     const alreadyExists = likes.find((item) => item.id == sneaker.id);
-    
+
     if (!alreadyExists) {
         likes.push({
             id: sneaker.id,
@@ -89,24 +89,24 @@ function removeFromLikes(id) {
 
 function searchProducts() {
     const searchText = searchInput.value.toLowerCase();
-    
+
     if (searchText === '') {
         showAllCards();
         return;
     }
-    
+
     const foundProducts = sneakers.filter((item) => {
         const sneakerTitle = item.title.toLowerCase();
         return sneakerTitle.includes(searchText);
     });
-    
+
     content.innerHTML = "";
-    
+
     if (foundProducts.length === 0) {
         content.innerHTML = '<p style="font-size: 18px; text-align: center;">Ничего не найдено</p>';
         return;
     }
-    
+
     foundProducts.forEach((item) => {
         content.innerHTML += `
             <div class="purchases__card">
@@ -126,13 +126,13 @@ function searchProducts() {
             </div>
         `;
     });
-    
+
     addLikeListeners();
 }
 
 searchButton.addEventListener('click', searchProducts);
 
-searchInput.addEventListener('keypress', function(event) {
+searchInput.addEventListener('keypress', function (event) {
     if (event.key === 'Enter') {
         searchProducts();
     }
@@ -141,11 +141,24 @@ searchInput.addEventListener('keypress', function(event) {
 showAllCards();
 
 
-const cart=document.querySelector('.header__icon')
-const allCart=document.querySelector('.cart__content')
+const cart = document.querySelector('.header__icon')
+const allCart = document.querySelector('.cart__content')
+const x = document.querySelector('.cart__x')
 
 
-cart.addEventListener('click',()=>{ 
-    cart.style.top='0'
-    cart.style.right='0'
+cart.addEventListener('click', () => {
+    allCart.style.right = 0
 })
+
+x.addEventListener('click', () => {
+    allCart.style.right = '-300px'
+})
+
+const addCart = document.querySelectorAll('.purchases__prise-img')
+addCart.forEach((add) => {
+    const addId = 
+    
+})
+
+
+

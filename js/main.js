@@ -142,8 +142,10 @@ showAllCards();
 
 
 const cart=document.querySelector('.header__icon')
+const allCart=document.querySelector('.cart__content')
 
 
-cart.addEventListener('click',()=>{
-    
+cart.addEventListener('click',()=>{ 
+    cart.style.top='0'
+    cart.style.right='0'
 })

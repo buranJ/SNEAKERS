@@ -42,6 +42,10 @@ function addLikeListeners() {
     });
 }
 
+
+
+
+
 function likeButtonClicked(event) {
     const button = event.currentTarget;
     const id = button.getAttribute('data-id');

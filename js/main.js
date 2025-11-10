@@ -1,5 +1,6 @@
 let likes = JSON.parse(localStorage.getItem('like')) || [];
 let sneakers = JSON.parse(localStorage.getItem('sneakers')) || [];
+let Cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 const content = document.querySelector('.sneakers__content');
 const searchInput = document.querySelector('.sneakers__inp');
@@ -151,14 +152,28 @@ cart.addEventListener('click', () => {
 })
 
 x.addEventListener('click', () => {
-    allCart.style.right = '-300px'
+    allCart.style.right = '-500px'
 })
+const disCart=document.querySelector('.cart__sneakers')
+function renderCart(){
+    if(Cart.length==0){
+       disCart.innerHTML=`<div class="cart__empty">
+        <img src="./imgs/cart.svg" alt="cart empty" class="cart__empty-img">
+        <h2 class="cart__empty-title">Корзина пустая</h2>
+        <p class="cart__empty-text">Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.</p>
+        <button class="cart__empty-btn">Вернуться назад</button>
+    </div>`
+    }
+}
+renderCart()
 
-const addCart = document.querySelectorAll('.purchases__prise-img')
-addCart.forEach((add) => {
-    const addId = 
+
+
+// const addCart = document.querySelectorAll('.purchases__prise-img')
+// addCart.forEach((add) => {
+//     const addId = 
     
-})
+// })
 
 
 

@@ -139,3 +139,11 @@ searchInput.addEventListener('keypress', function(event) {
 });
 
 showAllCards();
+
+
+const cart=document.querySelector('.header__icon')
+
+
+cart.addEventListener('click',()=>{
+    
+})

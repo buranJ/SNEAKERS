@@ -40,6 +40,7 @@
   transition: 1s;
   position: absolute;
   top: -4%;
+  right: -50%;
   height: 100vh;
   z-index: 3;
   padding: 30px;
@@ -399,45 +400,6 @@ body {
 }
 .bookmarks h1 {
   color: #000000;
-}
-
-.cart__top {
-  margin-top: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 30px;
-}
-.cart__img-order {
-  width: 80px;
-  height: 120px;
-  border: 0;
-}
-.cart__subtitle {
-  font-weight: 600;
-  font-size: 22px;
-  color: #87C20A;
-}
-.cart__text {
-  font-weight: 400;
-  font-size: 16px;
-  color: #9b9898;
-}
-.cart__btn {
-  margin-top: 40px;
-  border: none;
-  padding: 17px 15px;
-  background-color: #9DD458;
-  color: #FFFFFF;
-  border-radius: 18px;
-}
-
-.cart__img {
-  padding: 10px;
-  border: 1px solid black;
-  border-radius: 10px;
 }
 
 .purchases__text {

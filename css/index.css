@@ -14,8 +14,7 @@
 
 .swiper-slide img {
   display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .swiper-button-next,
@@ -184,9 +183,6 @@ body {
   flex-wrap: wrap;
   gap: 20px;
 }
-.sneakers input::-moz-placeholder {
-  color: #C4C4c4;
-}
 .sneakers input::placeholder {
   color: #C4C4c4;
 }
@@ -354,8 +350,7 @@ body {
 .purchases__crosovok {
   width: 150px;
   height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   margin-bottom: 10px;
 }
 .purchases__about {
@@ -396,9 +391,10 @@ body {
 }
 
 .cart__content {
+  transition: 1s;
   position: absolute;
   top: -4%;
-  right: -300px;
+  right: -50%;
   height: 100vh;
   z-index: 3;
   padding: 30px;

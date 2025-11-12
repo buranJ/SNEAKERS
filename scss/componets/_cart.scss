@@ -1,8 +1,9 @@
 .cart {
     &__content {
+        transition: 1s;
         position: absolute;
         top: -4%;
-        right: -300px;
+        right: -50%;
         height: 100vh;
         z-index: 3;
         padding: 30px;

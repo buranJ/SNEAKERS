@@ -235,7 +235,8 @@ body {
   display: flex;
   align-items: center;
   text-align: center;
-  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
   gap: 20px;
 }
 .bookmarks__smail {

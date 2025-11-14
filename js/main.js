@@ -123,7 +123,7 @@ function searchProducts() {
                         <span>ЦЕНА:</span> ${item.price}
                     </p> 
                     <div class="purchases__prise-plus">
-                        <img class="purchases__prise-img" src="../imgs/plus.svg" alt="plus">
+                        <img data-id="${item.id}" class="purchases__prise-img" src="../imgs/plus.svg" alt="plus">
                     </div>
                 </div>
             </div>
@@ -155,7 +155,7 @@ cart.addEventListener('click', () => {
 })
 
 x.addEventListener('click', () => {
-    allCart.style.right = '-500px'
+    allCart.style.right = '-50% '
 })
 const disCart=document.querySelector('.cart__content')
 function renderCart(){
@@ -187,6 +187,28 @@ return `<div class="sneakers__content">
     }
 }
 renderCart()
+const addCart = document.querySelectorAll('.purchases__prise-img')
+
+
+function funCart() {
+    addCart.forEach((add) => {
+        add.addEventListener("click", () => {
+            const addId = add.getAttribute('data-id');
+            console.log(addId);
+
+            const addedCart = sneakers.filter((item) => item.id == addId)
+            const found = sneakers.find((item) => item.id == addId)
+            if (!found) {
+                Cart.push(addedCart[0])
+                localStorage.setItem("cart", JSON.stringify(Cart))
+            }
+        })
+
+    })
+
+}
+funCart()
+
 
 
 
